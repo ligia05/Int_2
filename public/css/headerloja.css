@@ -1,0 +1,45 @@
+header{
+    max-width: 100%;
+   flex-wrap: wrap;
+   display: flex;
+   justify-content: space-around;
+   align-items: center;
+   background: rgb(94,164,65);
+   background: linear-gradient(337deg, rgba(94,164,65,1) 2%, rgba(84,149,85,1) 47%, rgba(36,221,97,1) 100%);
+   color:aliceblue;
+   font-family: 'Pompiere', cursive
+   }
+   h1{
+     display: flex;
+
+     align-self: center;
+   }
+
+   .local{
+     display: flex;
+     flex-wrap: wrap;
+    font-size: 20px;
+     flex-direction: column;
+     margin-right: 100px;
+
+   }
+
+   .pin{
+     display: flex;
+   padding-left: 100px;
+
+   }
+
+   .perfil{
+     display: flex;
+    flex-wrap: nowrap;
+     width: 80px;
+    height: 80px;
+    margin-right: 40px
+   }
+   .menu{
+     display: flex;
+     flex-wrap: wrap;
+     flex-direction: row;
+     margin-right: 20px;
+   }

@@ -1,0 +1,23 @@
+Passo 1 - Exibindo o formulário:
+    ✔ Criar um novo roteador num arquivo chamado AdmRouter.js @done(21-12-14 09:14)
+    ✔ Criar uma rota get para '/adm/pizzas/create'. @done(21-12-14 09:14)
+    Esta rota, por enquanto, deve somente retornar para o cliente uma
+    mensagem qualquer.
+    ✔ Importe esse novo roteador no index.js e use-o com o app.use @done(21-12-14 09:14)
+    ✔ Teste a rota acessando http://localhost:3000/adm/pizzas/create @done(21-12-14 09:14)
+    ✔ Importe o PizzasController no AdmRouter.js @done(21-12-14 09:14)
+    ✔ Faça a rota get para '/adm/pizzas/create' direcionar a requisição para PizzasController.create @done(21-12-14 09:14)
+    ✔ Faça o PizzasController.create retornar a view crud-pizzas/create.ejs @done(21-12-14 09:14)
+
+Passo 2: Exibindo o formulário de login:
+    ✔ Criar uma rota get no AdmRouter para /login direcionando a requisição para AdmController.showLogin @done(21-12-14 09:31)
+    ✔ Criar o AdmController.showLogin fazendo com que ele exiba a view login.ejs @done(21-12-14 09:33)
+    ✔ A view login.ejs tem campo email, senha e botão de logar. @done(21-12-14 09:37)
+    ✔ Direcionar o form de login para a rota post /adm/login @done(21-12-14 09:44)
+    ☐ Criar uma rota POST para /adm/login no AdmRouter deve direcionar para o controller AdmController.login
+    ☐ Criar o controller AdmController.login que exibe msg ok
+
+Passo 3: Faze3r o Logout:
+    ✔ Criar uma rota GET /adm/logout que direcione o req para um controller AdmController.logout @done(21-12-16 11:29)
+    ✔ Criar o controller AdmController.logout @done(21-12-16 11:29)
+    ✔ Fazer com que o AdmController.logout set a session.usuario como undefined e direcione o usuário para tela de login @done(21-12-16 11:29)

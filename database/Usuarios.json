@@ -1,0 +1,12 @@
+[
+    {
+        "id":1,
+        "email":"luis@pizzariafantastica.com",
+        "senha":"123456"
+    },
+    {
+        "id":2,
+        "email":"paulo@pizzariafantastica.com",
+        "senha":"123456"
+    }
+]

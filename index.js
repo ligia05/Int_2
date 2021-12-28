@@ -3,7 +3,7 @@ const express = require('express');
 const session = require("express-session");
 
 // Importando o roteador
-const PizzasRouter = require('./routers/PizzasRouter');
+const HomeRouter = require('./routers/HomeRouter');
 const AdmRouter = require('./routers/AdmRouter');
 
 // Importando os middlewares
@@ -29,7 +29,7 @@ app.use(express.static(__dirname + '/public'));
  app.use(LogMiddleware);
 
 // criar a rota respondendo a requisição
-app.use('/', PizzasRouter);
+app.use('/', HomeRouter);
 app.use('/adm', AdmRouter);
 
 // levantar o servidor

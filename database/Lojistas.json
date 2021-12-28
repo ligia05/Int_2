@@ -1,0 +1,38 @@
+[
+    {
+        "id":1,
+        "email":"joao@tlink.com",
+        "senha":"123456"
+    },
+    {
+        "id":2,
+        "email":"ana@tlink.com",
+        "senha":"123456"
+    },
+
+    {
+        "id":3,
+        "email":"sansa@tlink.com",
+        "senha":"123456"
+    },
+    {
+        "id":4,
+        "email":"petbrasil@tlink.com",
+        "senha":"123456"
+    },
+    {
+        "id":5,
+        "email":"massasmineiras@tlink.com",
+        "senha":"123456"
+    },
+    {
+        "id":6,
+        "email":"artesbordados@tlink.com",
+        "senha":"123456"
+    },
+    {
+        "id":7,
+        "email":"anadoces@tlink.com",
+        "senha":"123456"
+    }
+]

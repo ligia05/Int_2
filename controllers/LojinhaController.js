@@ -4,6 +4,10 @@ const { validationResult } = require('express-validator');
 
 
 const controller = {
+   inicio: (req, res)=> {
+        return res.render('loja',{lojinha, busca:""});
+        // res.send(lojinha)
+    },
     
     listar: (req, res)=> {
         return res.render('lojinha',{lojinha, busca:""});
@@ -26,7 +30,7 @@ const controller = {
             });
 
         // Retornar a pizza encontrada para o cliente (res.send())
-        res.render('pizza',{produto, idNext, idPrev});
+        res.render('lojinha',{produto, idNext, idPrev});
 
     },
 

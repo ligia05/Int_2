@@ -1,7 +1,8 @@
 // Importar o express
 const express = require('express');
 const ValidadorDeFormPizza = require('../middlewares/ValidadorDeFormPizza');
-const AdmController = require("../controllers/AdmController");
+
+const HomeController = require("../controllers/HomeController");
 
 const multer = require('multer');
 const storage = multer.diskStorage(
@@ -16,8 +17,8 @@ const storage = multer.diskStorage(
 const upload = multer({storage})
 
 
-// Importar o PizzasController
-const PizzasController = require('../controllers/PizzasController');
+// Importar o HomeUserController
+const HomeUserController = require("../controllers/HomeUserController");
 const UsuarioLogado = require('../middlewares/UsuarioLogado');
 const SemLogin = require('../middlewares/SemLogin');
 
@@ -25,11 +26,11 @@ const SemLogin = require('../middlewares/SemLogin');
 const router = express.Router();
 
 // Definir rotas às quais ele responde
-router.get('/lojinha/create', UsuarioLogado, PizzasController.create);
-router.post('/lojinha/create', UsuarioLogado, upload.single('img'), ValidadorDeFormPizza, PizzasController.store);
-router.get('/login', SemLogin, AdmController.showLogin);
-router.get('/logout', AdmController.logout);
-router.post('/login', AdmController.login);
+router.get('/home/clientecreate', UsuarioLogado, HomeUserController.create);
+router.post('/home/clientecreate', UsuarioLogado, upload.single('img'), ValidadorDeFormPizza, HomeUserController.store);
+//router.get('/login', SemLogin, HomeController.showLogin);
+//router.get('/logout', HomeController.logout);
+//router.post('/login', HomeController.login);
 
 // Exportar o roteador 
 module.exports = router;

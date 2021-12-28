@@ -10,8 +10,8 @@ module.exports = {
         const {email, senha} = req.body;
         
 
-        // Carregar o array de usuários (database/Usuarios.json)
-        const usuarios = require('../database/Usuarios.json');
+        // Carregar o array de usuários (database/Lojistas.json)
+        const usuarios = require('../database/Lojistas.json');
 
         // Buscar o usuário no array pelo email digitado
         const usuario = usuarios.find( u => u.email == email && u.senha == senha );
@@ -25,12 +25,12 @@ module.exports = {
         req.session.usuario = usuario;
         
         // Redirecionar o usuário para uma página interna
-        return res.redirect("/adm/lojinha/create");
+        return res.redirect("/");
 
     },
     logout: (req,res) => {
         req.session.usuario = undefined;
-        res.redirect('/adm/login');
+        res.redirect('/');
     }
 
 }

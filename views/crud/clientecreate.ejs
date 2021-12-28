@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>T-link</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pompiere&display=swap" rel="stylesheet">
+  
+    <link rel="stylesheet" href="/css/cadastro.css">
+</head>
+
+<body>
+    <header class="header-container">
+        <div class="logo">
+            <img src="./assets/img/logo.png" alt="Logo do site">
+            <a href="./cadastro.html"></a>
+        </div>
+
+        <div class="search-box">
+            <input type="text" name="search" class="search-text" autofocus placeholder="Buscar por loja ou categoria">
+            <a href="#" class="search-btn">
+                <img src="/img/busca.png" alt="Lupa">
+            </a>
+        </div>
+
+        <div class="loc-container">
+            <a href="#" class="link-loc">
+                <img src="/img/pin.png" alt="Ícone de localização">ATIVE SUA LOCALIZAÇÃO
+            </a>
+        </div>
+
+        <div class="login-cadastro">
+            <a href="">Login</a>
+            <a href="">Cadastre-se</a>
+        </div>
+
+
+
+
+
+    </header>
+
+    <h3>CADASTRO DE USUÁRIO</h3>
+    <main class="cadastro-container">
+        <div class="div-form">
+            <form action="" method="post">
+                <div class="div-name">
+                    <label for="name">Nome</label>
+                    <input type="text" name="nome" id="name" required maxlength="30">
+                </div>
+                <div class="div-last-name">
+                    <label for="last-name">Sobrenome</label>
+                    <input type="text" name="nome" id="last-name" required maxlength="30">
+                </div>
+                <div class="div-cpf">
+                    <label for="cpf">CPF</label>
+                    <input type="text" name="cpf" id="cpf" required maxlength="30">
+                </div>
+                <div class="div-email">
+                    <label for="email">Email</label>
+                    <input type="email" name="email" id="email" required maxlength="50">
+                </div>
+                <div class="div-senha">
+                    <label for="password">Senha</label>
+                    <input type="password" name="senha" id="password" required maxlength="30">
+                </div>
+                <div class="div-checkbox">
+                    <input type="checkbox" name="checkbox" id="checkbox" required maxlength="30">
+                    <label for="checkbox">Receber novidades</label>
+                </div>
+                <div class="div-button">
+                    <button type="submit" class="button-continuar">Continuar</button>
+                </div>
+
+            </form>
+        </div>
+    </main>
+
+   
+</body>
+
+</html>

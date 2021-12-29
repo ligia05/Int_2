@@ -1,4 +1,4 @@
-const lojinha = require('../database/Pizzas.json');
+const lojinhas = require('../database/Pizzas.json');
 const fs = require('fs');
 const { validationResult } = require('express-validator');
 
@@ -7,7 +7,7 @@ const controller = {
 
 
     listar: (req, res)=> {
-        return res.render('lojinha',{lojinha, busca:""});
+        return res.render('lojinha',{lojinhas, busca:""});
         // res.send(lojinha)
     },
 
@@ -19,10 +19,10 @@ const controller = {
         let idNext = null;
 
         // Capturar do array a pizza com o id requisitado (lojinha.find)
-        const produto = lojinha.find(
+        const produto = lojinhas.find(
             (p, i) => {
-                idPrev = lojinha[i-1]==undefined?undefined:lojinha[i-1].id;
-                idNext = lojinha[i+1]==undefined?undefined:lojinha[i+1].id;
+                idPrev = lojinhas[i-1]==undefined?undefined:lojinhas[i-1].id;
+                idNext = lojinhas[i+1]==undefined?undefined:lojinhas[i+1].id;
                 return p.id == idLojinha
             });
 
@@ -38,13 +38,13 @@ const controller = {
 
         // Filtrar do arrays de lojinha somente as lojinha
         // que que tiverem a string buscada no nome
-        const lojinhaFiltras = lojinha.filter(
+        const lojinhaFiltras = lojinhas.filter(
             p => p.nome.toUpperCase().includes(string.toUpperCase())
         );
 
         // Renderizar a view index passando para ela
         // as lojinha filtradas
-        res.render('lojinha', {lojinha:lojinhaFiltras, busca:lojastring});
+        res.render('lojinha', {lojinhas:lojinhaFiltras, busca:lojastring});
     },
 
     create: (req, res) => {
@@ -66,15 +66,15 @@ const controller = {
         const produto = {nome, ingredientes, preco, img:'/img/' + req.file.filename}
         
         // Adicionar o id à pizza recém criada
-     produto.id = lojinha[lojinha.length - 1].id + 1;
+     produto.id = lojinhas[lojinhas.length - 1].id + 1;
 
         // Adicionar a pizza ao array de lojinha
-        lojinha.push(produto);
+        lojinhas.push(produto);
 
         // Salvar o json do array de lojinha no arquivo Pizzas.json
         fs.writeFileSync(
             __dirname + '/../database/Pizzas.json',
-            JSON.stringify(lojinha, null, 4),
+            JSON.stringify(lojinhas, null, 4),
             {flag:'w'}
         );
         

@@ -25,9 +25,9 @@ const SemLogin = require('../middlewares/SemLogin');
 const router = express.Router();
 
 // Definir rotas às quais ele responde
-router.get('/lojinha/create', UsuarioLogado, LojinhaController.create);
+router.get('/lojinha', UsuarioLogado, LojinhaController.create);
 router.post('/lojinha/create', UsuarioLogado, upload.single('img'), ValidadorDeFormPizza, LojinhaController.store);
-router.get('/login', SemLogin, AdmController.showLogin);
+router.get('/adm/clientecreate', SemLogin, AdmController.showLogin);
 router.get('/logout', AdmController.logout);
 router.post('/login', AdmController.login);
 

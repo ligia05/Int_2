@@ -1,17 +1,15 @@
-<%- include('parts/head',{title:'Pizzaria Fantástica'}); %>
+<%- include('parts/head',{title:'TLINK'}); %>
 	<link rel="stylesheet" href="/css/index.css">
-	<nav id="header">
-        <ul>
-   <li> <a href="busca"></a> <form action="/busca" method="get">
+	<form action="/busca" method="get">
 		<input type="text" name="q" placeholder="Qual produto você procura?" autocomplete="off" value="<%= busca %>">
 		<button type="submit">Buscar</button>
 	</form>
 
-	<% if(lojinha.length > 0) { %>
+	<% if(lojinhas.length > 0) { %>
 	<main>
-		<% for(let produto of lojinha){ %>
+		<% for(let produto of lojinhas){ %>
 		<article>
-			
+			<img src="<%= produto.img %>" alt="<%= produto.nome %>">
 			<a href="/lojinha/<%= produto.id %>">Ver Mais</a>
 			<button>+ Add</button>
 			<div><%= produto.nome %></div>
@@ -21,7 +19,5 @@
 	</main>
 	<%} else { %>
 		<div class="produto-nao-encontrada">Nenhuma produto encontrada. Tente ser menos específico na sua busca.</div>
-	<% } %></a></li>
-    </ul>
-    </nav>
+	<% } %>
 	<%- include('parts/foot'); %>

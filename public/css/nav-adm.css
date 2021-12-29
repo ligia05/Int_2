@@ -1,42 +1,53 @@
 #nav-adm{
-    display: flex;
-    font-family: 'Pompiere', cursive;
- 
+  font-family:'Pompiere', cursive;
+  display: flex;
+  justify-content: space-between;
+  background: rgb(94,164,65);
+  background: linear-gradient(337deg, rgba(94,164,65,1) 2%, rgba(84,149,85,1) 47%, rgba(36,221,97,1) 100%);
+  color: #FFF;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
 
-   
+}
+#nav-adm div{
+  padding: 10px;
+  font-size: 2rem;
+}
 
-    
-}
- img.logo{
-  
-    margin-right:50px;
-}
-span.bv{
-font-size: 30px;
-}
+
 #nav-adm ul{
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    flex-direction: row-reverse;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
 }
 
 #nav-adm ul li {
-    display: flex;
-    flex-direction: row-reverse;
+  display: block;
 }
 
 #nav-adm ul li a{
-    display: flex;
-    padding: 20px;
-    font-size: 1.5rem;
- 
-    flex-direction: row-reverse;
-    height: 100%;
-    color: #666;
+  display: flex;
+  padding: 20px;
+  font-size: 1.5rem;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+
 }
 
+#nav-adm ul li.selected a{
+ 
+  color: #FFF;
+}
+
+#nav-adm ul li a:hover{
+ 
+  text-decoration: none;
+  color: #E0E0E0;
+}
 
 header{
     max-width: 100%;

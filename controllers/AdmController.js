@@ -25,11 +25,42 @@ module.exports = {
         req.session.usuario = usuario;
         
         // Redirecionar o usuário para uma página interna
-        return res.redirect("/adm/lojinha/create");
+        return res.redirect("/adm/clientecreate");
 
     },
     logout: (req,res) => {
         req.session.usuario = undefined;
+        res.redirect('/adm/login');
+    },
+    showLogin: (req,res) => {
+        return res.render("login");
+    },
+    loginlojista: (req,res) => {
+
+        // Capturar o email e a senha inseridos pelo usuário
+        const {email, senha} = req.body;
+        
+
+        // Carregar o array de usuários (database/Usuarios.json)
+        const lojas = require('../database/Lojistas.json');
+
+        // Buscar o usuário no array pelo email digitado
+        const lojista = lojas.find( u => u.email == email && u.senha == senha );
+
+        // Caso usuário não exista, retornar erro (fim)
+        if(lojista === undefined){
+            return res.send("Senha ou email inválidos");
+        }
+
+        // Se chegou até aqui, escreve a session do usuario.
+        req.session.lojista = lojista;
+        
+        // Redirecionar o usuário para uma página interna
+        return res.redirect("/adm/cliente/create");
+
+    },
+    logout: (req,res) => {
+        req.session.lojista = undefined;
         res.redirect('/adm/login');
     }
 

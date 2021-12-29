@@ -5,7 +5,7 @@ const session = require("express-session");
 // Importando o roteador
 const HomeRouter = require('./routers/HomeRouter');
 const AdmRouter = require('./routers/AdmRouter');
-
+const LojinhaRouter = require('./routers/LojinhaRouter');
 // Importando os middlewares
 const LogMiddleware = require('./middlewares/LogMiddleware');
 
@@ -31,6 +31,6 @@ app.use(express.static(__dirname + '/public'));
 // criar a rota respondendo a requisição
 app.use('/', HomeRouter);
 app.use('/adm', AdmRouter);
-
+app.use('/lojinha', LojinhaRouter);
 // levantar o servidor
 app.listen(3000, ()=>{console.log("servir rodando...")})

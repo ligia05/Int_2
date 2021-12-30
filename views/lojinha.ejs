@@ -1,10 +1,7 @@
 <%- include('parts/head',{title:'TLINK'}); %>
 <body>
 <link rel="stylesheet" href="/css/lojasoniacliente.css">
-	<form action="/loja" method="get">
-		<input type="text" name="q" placeholder="Qual produto você procura?" autocomplete="off" value="<%= busca %>">
-		<button type="submit">Buscar</button>
-	</form>
+	
 
 
 
@@ -12,14 +9,11 @@
 	  
 		  <img class="logo" src="/img/logo.png" alt="logo">
 	  
-		  <div class="busca">
-			<label for="site-search">
-			  <h2>Buscar Serviços ou Produtos</h2>
-			</label>
-	  
-			<input class="tela" type="search" id="site-search" name="q" aria-label="Search through site content">
-	  
-			<button class="boton">Buscar</button>
+		  <form action="/busca" method="get" >
+			<input type="text" name="q" placeholder="Qual produto você procura?" autocomplete="off" value="<%= busca %>">
+			<a href="/views/loja.ejs"></a>
+			<button type="submit">Buscar</button>
+		</form>
 		  </div>
 	  
 	  

@@ -1,4 +1,4 @@
-<%- include('parts/head',{title:'TLINK'}); %>
+
 	<link rel="stylesheet" href="/css/index.css">
 	<form action="/busca" method="get">
 		<input type="text" name="q" placeholder="Qual produto você procura?" autocomplete="off" value="<%= busca %>">
@@ -10,7 +10,7 @@
 		<% for(let produto of lojinhas){ %>
 		<article>
 			<img src="<%= produto.img %>" alt="<%= produto.nome %>">
-			<a href="/lojinha/<%= produto.id %>">Ver Mais</a>
+			<a href="/loja/<%= produto.id %>">Ver Mais</a>
 			<button>+ Add</button>
 			<div><%= produto.nome %></div>
 			<span><%= produto.preco.toLocaleString('pt-br', { minimumFractionDigits: 2 , style: 'currency', currency: 'BRL' }) %></span>
@@ -18,6 +18,6 @@
 		<% } %>
 	</main>
 	<%} else { %>
-		<div class="produto-nao-encontrada">Nenhuma produto encontrada. Tente ser menos específico na sua busca.</div>
+		<div class="produto-nao-encontrada">Nenhuma produto encontrado. Tente ser menos específico na sua busca.</div>
 	<% } %>
-	<%- include('parts/foot'); %>
+	

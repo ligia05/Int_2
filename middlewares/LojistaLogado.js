@@ -1,6 +1,6 @@
 module.exports = (req, res, next) => {
     
-    if(req.session.usuario == undefined){
+    if(req.session.lojista == undefined){
         return res.redirect("/login");
     }
 

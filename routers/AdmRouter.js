@@ -1,6 +1,6 @@
 // Importar o express
 const express = require('express');
-const ValidadorDeFormPizza = require('../middlewares/ValidadorDeFormPizza');
+
 const AdmController = require("../controllers/AdmController");
 
 const multer = require('multer');
@@ -17,16 +17,16 @@ const upload = multer({storage})
 
 
 // Importar o PizzasController
-const LojinhaController = require('../controllers/LojinhaController');
-const UsuarioLogado = require('../middlewares/UsuarioLogado');
-const SemLogin = require('../middlewares/SemLogin');
 
+
+const SemLogin = require('../middlewares/SemLogin');
+const LojistaLogado = require('../middlewares/LojistaLogado')
 // Criar roteador
 const router = express.Router();
 
 // Definir rotas às quais ele responde
-router.get('/lojinha', UsuarioLogado, LojinhaController.create);
-router.post('/lojinha/create', UsuarioLogado, upload.single('img'), ValidadorDeFormPizza, LojinhaController.store);
+router.get('/adm/lojistacreate', LojistaLogado, AdmController.loginlojista);
+
 router.get('/adm/clientecreate', SemLogin, AdmController.showLogin);
 router.get('/logout', AdmController.logout);
 router.post('/login', AdmController.login);

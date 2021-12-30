@@ -32,5 +32,6 @@ app.use(express.static(__dirname + '/public'));
 app.use('/', HomeRouter);
 app.use('/adm', AdmRouter);
 app.use('/lojinha', LojinhaRouter);
+app.use('/loja', LojinhaRouter);
 // levantar o servidor
 app.listen(3000, ()=>{console.log("servir rodando...")})

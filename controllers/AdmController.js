@@ -25,7 +25,7 @@ module.exports = {
         req.session.usuario = usuario;
         
         // Redirecionar o usuário para uma página interna
-        return res.redirect("/adm/clientecreate");
+        return res.redirect("/adm/usercreate");
 
     },
     logout: (req,res) => {
@@ -56,7 +56,7 @@ module.exports = {
         req.session.lojista = lojista;
         
         // Redirecionar o usuário para uma página interna
-        return res.redirect("/adm/cliente/create");
+        return res.redirect("/adm/lojistacreate");
 
     },
     logout: (req,res) => {

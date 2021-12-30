@@ -1,13 +1,13 @@
 const lojinhas = require('../database/Pizzas.json');
-const fs = require('fs');
-const { validationResult } = require('express-validator');
+
+
 
 
 const controller = {
 
 
     listar: (req, res)=> {
-        return res.render('lojinha',{lojinhas, busca:""});
+        return res.render('loja',{lojinhas, busca:""});
         // res.send(lojinha)
     },
 
@@ -27,7 +27,7 @@ const controller = {
             });
 
         // Retornar a pizza encontrada para o cliente (res.send())
-        res.render('lojinha',{produto, idNext, idPrev});
+        res.render('loja',{produto, idNext, idPrev});
 
     },
 
@@ -39,52 +39,13 @@ const controller = {
         // Filtrar do arrays de lojinha somente as lojinha
         // que que tiverem a string buscada no nome
         const lojinhaFiltras = lojinhas.filter(
-            p => p.nome.toUpperCase().includes(string.toUpperCase())
+            p => p.nome.toUpperCase().includes(lojastring.toUpperCase())
         );
 
         // Renderizar a view index passando para ela
         // as lojinha filtradas
-        res.render('lojinha', {lojinhas:lojinhaFiltras, busca:lojastring});
+        res.render('loja', {lojinhas:lojinhaFiltras, busca:lojastring});
     },
-
-    create: (req, res) => {
-        res.render('crud-lojinha/create')
-    },
-
-    store: (req,res) => {
-
-        const erros = validationResult(req);
-        
-        if(!erros.isEmpty()){
-            // return res.send(erros.mapped());
-            res.render('crud-lojinha/create', {erros: erros.mapped()})
-        }
-
-        const nome = req.body.nome;
-        const ingredientes = req.body.ingredientes.split(',').map(a => a.trim());
-        const preco = Number(req.body.preco);
-        const produto = {nome, ingredientes, preco, img:'/img/' + req.file.filename}
-        
-        // Adicionar o id à pizza recém criada
-     produto.id = lojinhas[lojinhas.length - 1].id + 1;
-
-        // Adicionar a pizza ao array de lojinha
-        lojinhas.push(produto);
-
-        // Salvar o json do array de lojinha no arquivo Pizzas.json
-        fs.writeFileSync(
-            __dirname + '/../database/Pizzas.json',
-            JSON.stringify(lojinhas, null, 4),
-            {flag:'w'}
-        );
-        
-        // Direcionar o usuário para a página que exibe a lista de lojinha
-        res.redirect('/lojinha');
-
-    }
-
-
 
 }
-
 module.exports = controller;
